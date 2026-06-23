@@ -39,6 +39,11 @@ public class Manager {
         Collections.sort(expense);
         displayExpenses(expense);
     }
+    public void generateReport(){
+        ArrayList<Expense> sorted = new ArrayList<>(expense);
+        Collections.sort(sorted,Expense.sortByAmount());
+        displayExpenses(sorted);
+    }
 
     private void displayExpenses(List<Expense> expenses) {
          System.out.println("Category\tAmount\tDate\tDescription");
@@ -47,9 +52,5 @@ public class Manager {
             }
     } 
 
-    public void generateReport(){
-        ArrayList<Expense> sorted = new ArrayList<>(expense);
-        Collections.sort(sorted,Expense.sortByAmount());
-        displayExpenses(sorted);
-    }
+    
 }
