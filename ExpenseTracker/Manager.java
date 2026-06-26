@@ -1,5 +1,5 @@
-package ExpenseTracker;
 import java.util.*;
+import com.google.gson.Gson;
 
 public class Manager {
      int totalExpense;
@@ -18,7 +18,9 @@ public class Manager {
         Expense obj= new Expense(amount,category,date,description);
         expense.add(obj);
         totalExpense+= amount;
-
+        Gson gson =new Gson();
+        String json=gson.toJson(expense);
+        System.out.println(json);
     }
 
     public void deleteExpense(){
